@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// Adding login fucntionality
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
