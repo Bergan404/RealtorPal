@@ -1,10 +1,16 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:realtorpal/firebase_options.dart';
+import 'package:realtorpal/screens/onboarding/page/onboarding_page.dart';
 
 //add firebase
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -18,13 +24,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // final isLoggedIn = FirebaseAuth.instance.currentUser != null;
+
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'RealtorPal',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'RealtorPal'),
+      home: OnboardingPage(),
     );
   }
 }
