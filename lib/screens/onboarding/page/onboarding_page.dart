@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class OnboardingPage extends StatelessWidget {
+  const OnboardingPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,9 +37,11 @@ class OnboardingPage extends StatelessWidget {
 }
 
 class PlaceholderWidget extends StatelessWidget {
+  const PlaceholderWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Text('SignUpPage Placeholder'),
       ),
